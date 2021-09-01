@@ -1,24 +1,55 @@
-# README
+﻿# IELABO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DWC202107の個人学習フェーズにて作成する、レビューサイト「IELABO」のRAEDMEです。
 
-Things you may want to cover:
+## サイト概要
 
-* Ruby version
+ラーメンのレビューサイトです。
+CARAVAN,BOOKERSのソースを参考に、device機能を使用し登録したユーザーがラーメンのレビュー記事を投稿できるようにします。
 
-* System dependencies
+### 実際のレビュー投稿の流れ
 
-* Configuration
+①管理者がラーメン店の情報ページ（show）を作成する
+②上記ページから「レビューを書く」ボタンを押すと、登録ユーザーはレビューが書けるようになる。
+↑上記をチャレンジとして実装してみたく思います↑
 
-* Database creation
+③他ユーザー登録ページ等はBOOKERSと同じ機能を想定。
 
-* Database initialization
+### サイトテーマ
 
-* How to run the test suite
+レビュー対象をラーメンのみに絞り、情報過多なサイトとは真逆にすることでユーザーのペインポイントを解決する。
 
-* Services (job queues, cache servers, search engines, etc.)
+### テーマを選んだ理由
 
-* Deployment instructions
+まずは自分の興味のあるものを題材にし、取り組みやすくしてWEBサイトを最後まで完成させてみたいため。
 
-* ...
+### ターゲットユーザ
+
+20～50代の男性（男女比 10：0）
+
+### 主な利用シーン
+
+ラーメンが好きなユーザーの暇つぶし、店舗ページ（show）に行くとユーザーが投稿した画像やレビューが一覧で見られ便利。等
+
+
+## 設計書
+
+作成中
+
+## チャレンジ要素一覧
+
+https://docs.google.com/spreadsheets/d/1FNnz99rDryKtGwCYQtgD69GoJ-ittfQ3OoP-yPtxg3I/edit#gid=0
+
+## 開発環境
+
+
+-   OS：Linux(CentOS)
+-   言語：HTML,CSS,JavaScript,Ruby,SQL
+-   フレームワーク：Ruby on Rails
+-   JS ライブラリ：jQuery
+-   IDE：Cloud9
+
+## 使用素材
+
+-   外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。
+-   使用しない場合は、使用素材の項目を README から削除してください。
