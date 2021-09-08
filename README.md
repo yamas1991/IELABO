@@ -1,4 +1,4 @@
-﻿# IELABO
+# IELABO
 
 ラーメンレビュー投稿サイト「IELABO」の概要です。
 
