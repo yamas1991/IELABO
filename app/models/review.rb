@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  attachment :image
+  has_one_attached :image
   belongs_to :user
   belongs_to :shop
 
