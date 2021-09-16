@@ -1,85 +1,49 @@
 <div class="container">
-  <div class="row d-flex align-items-center mx-auto my-auto justify-content-center">
-    <div class="col-md-10 shadow p-3 mb-5 bg-white rounded">
-      <div class="p-3 my-3">
-        <h1 class="h3 mb-0">新規登録</h1>
+  <div class="row d-flex mx-auto my-auto justify-content-center">
+
+    <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+
+      <h2 class="p-3 my-3 mb-0">
+        ユーザー登録
+      </h2>
+
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-6">
+          <strong><%= f.label :username %></strong>
+          <%= f.text_field :username, autofocus: true, class: "form-control" %>
+        </div>
       </div>
-      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="p-1">
-          <h6><strong>氏名</strong></h6>
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-6">
+          <strong><%= f.label :email %></strong>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "honyarara@howahowa.com", class: "form-control" %>
         </div>
+      </div>
 
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
-          </div>
-          <div class="col-md-6 mb-3">
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <%= f.label :last_name_kana %>
-            <%= f.text_field :last_name_kana, autofocus: true, class: "form-control" %>
-          </div>
-          <div class="col-md-6 mb-3">
-            <%= f.label :first_name_kana %>
-            <%= f.text_field :first_name_kana, autofocus: true, class: "form-control" %>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <strong>
-            <%= f.label :email %>
-          </strong>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "youremail@example.com", class: "form-control" %>
-        </div>
-
-        <div class="mb-3">
-          <strong>
-            <%= f.label :postal_code %>
-          </strong>
-          <%= f.text_field :postal_code, autofocus: true, class: "form-control" %>
-        </div>
-
-        <div class="mb-3">
-          <strong>
-            <%= f.label :address %>
-          </strong>
-          <%= f.text_field :address, autofocus: true, class: "form-control" %>
-        </div>
-
-        <div class="mb-3">
-          <strong>
-            <%= f.label :phone_number %>
-          </strong>
-          <%= f.text_field :phone_number, autofocus: true, class: "form-control" %>
-        </div>
-
-        <div class="mb-3">
-          <strong>
-            <%= f.label :password %>
-          </strong>
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-6">
+          <strong><%= f.label :password %></strong>
           <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
         </div>
+      </div>
 
-        <div class="mb-3">
-          <strong>
-            <%= f.label :password_confirmation %>
-          </strong>
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-6">
+          <strong><%= f.label :password_confirmation %></strong>
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
         </div>
+      </div>
 
-        <div class="actions">
-          <%= f.submit "新規登録", class: "btn btn-success btn-lg btn-block" %>
+      <div class="row m-5 justify-content-center">
+        <div class="col-md-6">
+        <%= f.submit "新規登録", class: "btn btn-success btn-lg btn-block" %>
         </div>
-        <%= link_to "ログインする", new_user_session_path %>
-      <% end %>
+      </div>
+    <% end %>
+
     </div>
+
   </div>
 </div>

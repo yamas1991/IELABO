@@ -55,6 +55,16 @@ h1 {
   z-index: 1;
 }
 
+h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	text-shadow: 1px 1px 1px gray;
+  position: relative;
+  z-index: 1;
+}
+
 p{
   margin: 0;
   padding: .2em;
@@ -81,13 +91,3 @@ p{
   background-position: 100% 50%;
 }
 
-
-
-//ログインページ
-
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}

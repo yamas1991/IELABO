@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :reviews
 
+  validates :username, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+
 end
