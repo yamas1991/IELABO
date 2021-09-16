@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  #deviceの機能使ったら↓の記述が必ず必要
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
