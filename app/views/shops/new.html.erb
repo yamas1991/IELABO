@@ -1,0 +1,60 @@
+
+
+  <div class="container">
+  <div class="row d-flex mx-auto my-auto justify-content-center">
+
+    <div class="col-md-9 shadow p-3 mb-5 bg-white rounded">
+
+    <h2 class="p-3 my-3 mb-0">
+      ショップ追加
+    </h2>
+
+    <%= form_with model: @shops, url: shops_path, method: :post, local: true do |f| %>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :shopname, "店舗名" %></strong>
+          <%= f.text_field :shopname, autofocus: true, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :image, "店舗の画像" %></strong>
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :address, "店住所" %></strong>
+          <%= f.text_field :address, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :opentime, "営業時間" %></strong>
+          <%= f.text_field :opentime, placeholder: "月～金　9：00～20：00", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :external_link, "外部リンク" %></strong>
+          <%= f.text_field :external_link, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row m-5 justify-content-center">
+        <div class="col-md-6">
+        <%= f.submit "新規登録", class: "btn btn-success btn-lg btn-block" %>
+        </div>
+      </div>
+
+    <% end %>
+
+    </div>
+  </div>
+</div>
+
