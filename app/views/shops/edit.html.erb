@@ -1,0 +1,79 @@
+<div class="container">
+ <div class="row d-flex align-items-center mx-auto my-auto justify-content-center">
+  <div class="col-md-9 shadow p-3 mb-5 bg-white rounded">
+
+    <div class="container-fluid">
+      <div class="row d-flex mx-auto my-auto justify-content-center">
+        <h2 class="p-3 my-3 mb-0">
+          ショップ編集
+        </h2>
+      </div>
+    </div>
+
+   <div class="container">
+    <div class="row d-flex align-items-center">
+
+     <div class="col-md-9 mx-auto my-3 py-3">
+      <%= form_with model: @shop, url: shop_path(@shop), local:true do |f| %>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :shopname, "店舗名" %></strong>
+          <%= f.text_field :shopname, autofocus: true, class: "form-control" %>
+        </div>
+      </div>
+
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :image, "店舗の画像" %></strong>
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+      </div>
+
+      <% if  @shop.image.attached? %>
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :image, "（現在の画像）" %></strong></p>
+              <%= image_tag @shop.image.variant(resize:'100x150') %>
+        </div>
+      </div>
+      <% end %>
+
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :address, "店住所" %></strong>
+          <%= f.text_field :address, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :opentime, "営業時間" %></strong>
+          <%= f.text_field :opentime, placeholder: "月～金　9：00～20：00", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :external_link, "外部リンク" %></strong>
+          <%= f.text_field :external_link, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row m-5 justify-content-center">
+        <div class="col-md-6">
+        <%= f.submit "編集完了", class: "btn btn-success btn-lg btn-block" %>
+        </div>
+      </div>
+
+    <% end %>
+
+          </div>
+  </div>
+</div>
+
+          </div>
+  </div>
+</div>
