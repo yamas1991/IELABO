@@ -1,2 +1,37 @@
 usersindex
-    <%= render 'users/sidebar', shops: @shops %>
+
+<div class="container">
+  <div class="row justify-content-center g-5">
+
+    <div class="col-4">
+      <%= render 'users/sidebar', shops: @shops %>
+    </div>
+
+    <div class="col-8">
+      <div class="list-group mb-5 shadow-sm rounded">
+
+        <% if user_signed_in? %>
+        <sapn class="list-group-item active">
+          マイレビュー一覧
+        </sapn>
+        <% @shops.each do |shop| %>
+          <div class="list-group-item">
+            <%= shop.shopname %>
+          </div>
+        <% end %>
+        <% end %>
+
+        <sapn class="list-group-item active">
+          みんなのレビュー一覧
+        </sapn>
+        <% @shops.each do |shop| %>
+          <div class="list-group-item">
+            <%= shop.shopname %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
