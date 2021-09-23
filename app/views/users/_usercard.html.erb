@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="div-box">
+
+        <div class="User-img">
+          <% if @user.image.attached? %>
+          <div class="xxxxxx">
+            <%= image_tag @user.image.variant(resize:'100x100') %>
+          </div>
+          <% else %>
+          <div class="xxxxxx">
+            <%= image_tag 'no_image.jpg' %>
+          </div>
+          <% end %>
+        </div>
+
+        <h3 class="User-name"><%= @user.username %></h3>
+
+        <% if user_signed_in? %>
+        <div class="contact-btn">
+          <%= link_to 'Edit' , edit_user_path(@user.id), class: "btn btn-sm btn-outline-dark" %>
+        </div>
+        <% end %>
+
+        <div class="profile">
+          <div class="text-start text-break"><%= @user.profile %></div>
+        </div>
+
+        <div class="profile-details">
+          <ul>
+            <li><%= link_to " 外部リンク", @user.external_link, class: "nav-link fas fa-home" %></li>
+            <% if user_signed_in? %>
+            <li><%= link_to " Logout", destroy_user_session_path, method: :delete, class: "nav-link fas fa-home" %></li>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

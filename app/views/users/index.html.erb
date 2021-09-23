@@ -7,10 +7,10 @@ usersindex
       <%= render 'users/sidebar', shops: @shops %>
     </div>
 
+    <% if user_signed_in? %>
     <div class="col-8">
       <div class="list-group mb-5 shadow-sm rounded">
 
-        <% if user_signed_in? %>
         <sapn class="list-group-item active">
           マイレビュー一覧
         </sapn>
@@ -19,8 +19,15 @@ usersindex
             <%= shop.shopname %>
           </div>
         <% end %>
-        <% end %>
+      </div>
+    </div>
 
+    <div class="col-4">
+    </div>
+    <% end %>
+
+    <div class="col-8">
+      <div class="list-group mb-5 shadow-sm rounded">
         <sapn class="list-group-item active">
           みんなのレビュー一覧
         </sapn>
@@ -29,7 +36,6 @@ usersindex
             <%= shop.shopname %>
           </div>
         <% end %>
-
       </div>
     </div>
 
