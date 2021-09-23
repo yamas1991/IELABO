@@ -30,6 +30,7 @@ class ShopsController < ApplicationController
       flash[:notice] = "アップデート完了"
       redirect_to shops_path
     else
+      flash.now[:alert] = "更新に失敗しました。入力漏れはありませんか？"
       render :edit
     end
   end
