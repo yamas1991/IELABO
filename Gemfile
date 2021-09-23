@@ -65,3 +65,16 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+gem 'devise'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'font-awesome-sass', '~> 5.13'
+
+gem 'image_processing', '~> 1.2'
+
+gem 'devise-i18n'
+gem 'devise-i18n-views'

@@ -1,0 +1,24 @@
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><%= image_tag 'logo.png' %></a>
+            <div class="navbar-nav ml-auto">
+
+            <% if user_signed_in? %>
+              <%= link_to "MY PAGE", user_path(current_user.id), class: "btn btn-outline-dark" %>
+            <% else %>
+               <%= link_to "LOG IN", new_user_session_path, class: "btn btn-outline-dark" %>
+            <% end %>
+
+            </div>
+        </div>
+      </nav>
+
+<% if notice %>
+　 <div class="alert alert-info"><%= notice %>
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+   </div>
+<% elsif alert %>
+   <div class="alert alert-danger"><%= alert %>
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+   </div>
+<% end %>

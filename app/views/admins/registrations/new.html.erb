@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row d-flex mx-auto my-auto justify-content-center">
+
+    <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+
+      <h2 class="p-3 my-3 mb-0">
+        管理者ユーザー登録
+      </h2>
+
+    <%= form_with model: @admin, url: admin_registration_path, id: 'new_admin', class: 'new_admin', local: true do |f| %>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-6">
+          <strong><%= f.label :email %></strong>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "honyarara@howahowa.com", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-6">
+          <strong><%= f.label :password %></strong>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-6">
+          <strong><%= f.label :password_confirmation %></strong>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row m-5 justify-content-center">
+        <div class="col-md-6">
+        <%= f.submit "新規登録", class: "btn btn-success btn-lg btn-block" %>
+        </div>
+      </div>
+    <% end %>
+
+    </div>
+
+  </div>
+</div>
