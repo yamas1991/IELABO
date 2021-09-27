@@ -3,6 +3,6 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :shop
 
-    validates :shop, presence: true
+  validates :title, :body, :evaluation, presence: true
 
 end

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.page(params[:page]).per(3)
+    @reviews = Review.all.order(created_at: :desc).page(params[:page]).per(4)
+    @user = current_user
   end
 
   def new
@@ -10,7 +11,6 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     @reviews = Review.all
-    @user = User.find(params[:id])
   end
 
   def create

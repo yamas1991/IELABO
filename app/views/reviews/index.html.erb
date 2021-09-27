@@ -2,6 +2,7 @@
   <div class="row">
 
     <div class="col-4">
+      <%= render 'reviews/usercard' %>
     </div>
 
     <div class="col-8">
@@ -10,19 +11,19 @@
           みんなのレビュー一覧
         </sapn>
 
-                <div class="container">
-                <div class="row card-group">
-                   <div class="col d-flex">
-          <% @reviews.each do |review| %>
+          <div class="container">
+          <div class="row">
+
+           <div class="flexwrap">
+              <% @reviews.each do |review| %>
 
 
-
-                    <div class="card">
+                    <div class="card h-100 mb-4">
 
                       <div class="card__imgframe">
                           <%= link_to review_path(review.id) do %>
                             <% if review.image.attached? %>
-                              <%= image_tag review.image.variant(resize:'100x150') %>
+                              <%= image_tag review.image.variant(resize:'300x300') %>
                               <% else %>
                               <%= image_tag ("no_image.jpg") %>
                             <% end %>
@@ -35,30 +36,45 @@
                             <strong><i class="far fa-flag"></i><span> <%= review.title %></span></strong>
                           <% end %>
                         </h5>
+
                         <div class="card-text">
                           説明 <%= review.body %>
                           <span><i class="fas fa-user"></i> By <%= review.user.username %> ｜ </span>
                         </div>
+                        <div class="relative-post-evaluation">
+
+                        <span>評価 </span>
+                        <span id="star-rate-<%= review.id %>"></span>
+                        <script>
+                          $('#star-rate-<%= review.id %>').raty({
+                            size: 10,
+                            half: true,
+                            readOnly: true,
+                            score: <%= review.evaluation %>,
+                          });
+                        </script>
+                      </div>
                       </div>
 
                       <div class="card-footer">
-                        <small class="text-muted">ショップ <%= link_to review.shop.shopname %></small>
+                        <small class="text-muted">ショップ <%= review.shop.shopname %></small>
                         <small class="text-muted">投稿日時 <%= review.created_at.strftime('%Y/%m/%d %H:%M') %></small>
                       </div>
 
                     </div>
 
+              <% end %>
+                              </div>
+              </div>
+        </div>
 
 
-          <% end %>
-                      </div>    </div>
-            </div>
-          <div class="container d-flex justify-content-center">
-            <%= paginate @reviews %>
-          </div>
-      </div>
+    <div class="container d-flex justify-content-center">
+      <%= paginate @reviews %>
     </div>
-
-  </div>
+    
+</div>
+</div>
+</div>
 </div>
 
