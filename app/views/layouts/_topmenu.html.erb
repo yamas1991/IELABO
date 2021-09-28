@@ -3,18 +3,45 @@
     <div class="col-md-12">
       <div class="jumbotron">
         <div class="container text-center">
-          <h1 class="display-4 font-weight-bold text-light">
-            welcome IELABO.
-          </h1>
-            <p class="lead font-weight-normal text-center">
-              ラーメンの情報を共有しましょう<br>
-              会員登録はこちらのボタンから。
-            </p>
-            <hr class="my-4 ">
-            <div>
-              <%= link_to "会員登録はこちら", new_user_registration_path, class:"btn btn-outline-dark" %>
-            </div>
+          
+            <% if user_signed_in? %>
+              <h1 class="display-4 font-weight-bold text-light">
+                HELLO !!
+              </h1>
+              <p class="lead font-weight-normal text-center">
+                ラーメンの情報を共有しましょう。<br>
+                レビューはこちらのボタンから。
+              </p>
+              <hr class="my-4 ">
+              <div>
+                <%= link_to "レビューを書く", new_review_path, class:"btn btn-outline-dark" %>
+              </div>
+            <% elsif admin_signed_in? %>
+              <h1 class="display-4 font-weight-bold text-light">
+                管理者でログイン中。
+              </h1>
+              <hr class="my-4 ">
+              <div>
+                <%= link_to "LOG OUT", destroy_admin_session_path, method: :delete, class: "btn btn-outline-dark" %>
+              </div>
+            <% else %>
+              <h1 class="display-4 font-weight-bold text-light">
+                welcome IELABO.
+              </h1>
+              <p class="lead font-weight-normal text-center">
+                ラーメンの情報を共有しましょう<br>
+                会員登録はこちらのボタンから。
+              </p>
+              <hr class="my-4 ">
+              <div>
+                <%= link_to "会員登録はこちら", new_user_registration_path, class:"btn btn-outline-dark" %>
+              </div>
+            <% end %>
+            
       </div>
     </div>
   </div>
 </div>
+
+
+

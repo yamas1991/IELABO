@@ -1,0 +1,78 @@
+reviews edit
+
+  <div class="container">
+  <div class="row d-flex mx-auto my-auto justify-content-center">
+
+    <div class="col-md-9 shadow p-3 mb-5 bg-white rounded">
+
+    <h2 class="p-3 my-3 mb-0">
+      レビューの編集
+    </h2>
+
+    <%= form_with model: @review, url: review_path(@review), local: true do |f| %>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :shop_id %></strong>
+          <%= f.collection_select :shop_id, Shop.all, :id, :shopname, :prompt => "店を選択" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :title, "レビュータイトル" %></strong>
+          <%= f.text_field :title, autofocus: true, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :image, "画像" %></strong>
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+      </div>
+
+      <% if @review.image.attached? %>
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :image, "（現在の画像）" %></strong></p>
+              <%= image_tag @review.image.variant(resize:'100x150') %>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <strong><%= f.label :body, "本文" %></strong>
+          <%= f.text_area :body, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="my-box col-md-9">
+          <div class="field" id="star">
+          <strong><%= f.label :evaluation, "総合評価：" %></strong>
+          <%= f.hidden_field :evaluation, id: :review_star %>
+          <script>
+            $('#star').raty({
+              size     : 36,
+              scoreName: 'review[evaluation]',
+              half: true,
+            });
+          </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="row m-5 justify-content-center">
+        <div class="col-md-6">
+        <%= f.submit "投稿する", class: "btn btn-success btn-lg btn-block" %>
+        </div>
+      </div>
+
+    <% end %>
+
+    </div>
+  </div>
+</div>
+

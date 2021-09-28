@@ -1,3 +1,24 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.flexwrap{
+  display : flex;
+}
+
+.card{
+  width: 180px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2)
+}
+.card__imgframe{
+  object-fit: cover;
+
+  background: #bbb;
+  box-sizing: border-box;
+}
