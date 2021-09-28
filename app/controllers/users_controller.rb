@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   def index
     @shops = Shop.all
     @reviews = Review.all.order(created_at: :desc).page(params[:page]).per(4)
-    @myreviews = Review.where(user_id: current_user.id)
+    if user_signed_in?
+      @myreviews = Review.where(user_id: current_user.id)
+    end
   end
 
   def show
