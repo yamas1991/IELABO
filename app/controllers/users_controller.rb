@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @myreviews = Review.where(user_id: current_user.id)
+    @reviews = Review.all.order(created_at: :desc).page(params[:page]).per(4)
   end
 
   def edit
