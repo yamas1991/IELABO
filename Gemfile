@@ -80,5 +80,3 @@ gem 'image_processing', '~> 1.2'
 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
-gem 'jquery-raty-rails', github: 'bmc/jquery-raty-rails'
