@@ -54,6 +54,7 @@ reviews edit
           <strong><%= f.label :evaluation, "総合評価：" %></strong>
           <%= f.hidden_field :evaluation, id: :review_star %>
           <script>
+            $('#star').empty();
             $('#star').raty({
               size     : 36,
               starOff: "<%= asset_path('star-off.png') %>",

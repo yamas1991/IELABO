@@ -46,6 +46,7 @@
                         <span>評価 </span>
                         <span id="star-rate-<%= review.id %>"></span>
                         <script>
+                          $('#star-rate-<%= review.id %>').empty();
                           $('#star-rate-<%= review.id %>').raty({
                             size: 10,
                             starOff: "<%= asset_path('star-off.png') %>",
