@@ -32,6 +32,7 @@ reviews show
             <div class="my-box col-md-8">
                         <span id="star-rate-<%= @review.id %>"></span>
                         <script>
+                          $('#star-rate-<%= @review.id %>').empty();
                           $('#star-rate-<%= @review.id %>').raty({
                             size: 10,
                             starOff: "<%= asset_path('star-off.png') %>",
