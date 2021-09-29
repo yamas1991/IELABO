@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/bmc/jquery-raty-rails.git
-  revision: a4fb8a9cc7d0b20ab4c0b8d0a6480dd31d4a8c26
-  specs:
-    jquery-raty-rails (0.0.2)
-      rails (>= 3.2.3)
-
-GIT
   remote: https://github.com/manfe/refile.git
   revision: 46b4178654e60bb5846b1423acf6d0740cdecc25
   specs:
@@ -314,7 +307,6 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails
-  jquery-raty-rails!
   kaminari
   listen (>= 3.0.5, < 3.2)
   mysql2
